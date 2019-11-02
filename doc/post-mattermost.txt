@@ -1,0 +1,95 @@
+post-mattermost.txt*	a summary
+
+Version : 0.0.1
+Author  : keita69sawada <keita69sawada@gmai.com>
+License : MIT license  {{{
+    Permission is hereby granted, free of charge, to any person obtaining
+    a copy of this software and associated documentation files (the
+    "Software"), to deal in the Software without restriction, including
+    without limitation the rights to use, copy, modify, merge, publish,
+    distribute, sublicense, and/or sell copies of the Software, and to
+    permit persons to whom the Software is furnished to do so, subject to
+    the following conditions:
+    The above copyright notice and this permission notice shall be included
+    in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+    OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+    IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+    CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+    TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+    SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+}}}
+
+==============================================================================
+CONTENTS					*post-mattermost-contents*
+
+INTRODUCTION			|post-mattermost-introduction|
+USAGE				|post-mattermost-usage|
+INTERFACE			|post-mattermost-interface|
+  VARIABLES			  |post-mattermost-variables|
+  COMMANDS			  |post-mattermost-commands|
+  KEY-MAPPINGS			  |post-mattermost-key-mappings|
+  FUNCTIONS			  |post-mattermost-functions|
+TODO				|post-mattermost-todo|
+CHANGELOG			|post-mattermost-changelog|
+
+
+==============================================================================
+INTRODUCTION					*post-mattermost-introduction*
+
+*post-mattermost.vim* is a post selected text to mattermost plugin
+
+Latest version:
+https://github.com/keita69/post-mattermost.vim
+
+==============================================================================
+USAGE						*post-mattermost-usage*
+
+
+
+==============================================================================
+INTERFACE					*post-mattermost-interface*
+
+------------------------------------------------------------------------------
+VARIABLES					*post-mattermost-variables*
+
+g:mattermost_endpoint				g:mattermost_endpoint
+	Default value: "http://192.168.56.10:8065/hooks/63mt7dzfmtdn7cegjs35mumxkw"
+
+------------------------------------------------------------------------------
+COMMANDS					*post-mattermost-commands*
+
+:PostMattermost[!] {text}				*:PostMattermost*
+	PostMattermost {text} to g:mattermost_endpoint
+	Use the ! to post-mattermost g:mattermost_endpoint
+
+:AutoPostMattermostModeEnable[!]			*:AutoPostMattermostModeEnable*
+	Start auto post-mattermost current buffer sentence with <CR>.
+	Use the ! to post-mattermost g:mattermost_endpoint
+
+:AutoPostMattermostModeDisable[!]			*:AutoPostMattermostModeDisable*
+	Disable Auto post-mattermost mode.
+
+:AutoPostMattermostModeToggle[!]			*:AutoPostMattermostModeToggle*
+	Toggle auto post-mattermost mode.
+
+------------------------------------------------------------------------------
+KEY-MAPPINGS					*post-mattermost-key-mappings*
+
+------------------------------------------------------------------------------
+FUNCTIONS					*post-mattermost-functions*
+
+
+==============================================================================
+TODO						*post-mattermost-todo*
+
+
+
+==============================================================================
+CHANGELOG					*post-mattermost-changelog*
+
+
+==============================================================================
+vim:tw=78:ts=8:ft=help:norl:noet:fen:
