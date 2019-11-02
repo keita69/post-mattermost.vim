@@ -13,12 +13,14 @@ function! s:PostMattermost() range
   let s:encoded_json_data = json_encode(s:json_data)
   let s:tmp_file = tempname()
   call writefile([s:encoded_json_data], s:tmp_file)
-  let s:cmd = "curl -sS -X POST -H \"Content-Type: application/json\" -d @" . s:tmp_file . " -H \"Authorization: Bearer " . s:access_token . "\" " . s:endpoint . '/api/v4/posts' . '| jq .'
+  let s:cmd = "curl " . s:curl_opt . " -sS -X POST -H \"Content-Type: application/json\" -d @" . s:tmp_file . " -H \"Authorization: Bearer " . s:access_token . "\" " . s:endpoint . '/api/v4/posts' . '| jq .'
   let s:result = system(s:cmd)
   call delete(s:tmp_file)
 
   let s:cmd_err = has_key(json_decode(s:result), 'status_code')
+
   if s:cmd_err 
+    echo s:cmd
     echo s:result
     echo 'ERROR : Cannot post to mattermost !!'
   else

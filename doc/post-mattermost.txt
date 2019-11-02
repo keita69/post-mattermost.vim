@@ -1,7 +1,7 @@
 post-mattermost.txt*	a summary
 
-Version : 0.0.1
-Author  : keita69sawada <keita69sawada@gmai.com>
+Version : 0.1.0
+Author  : keita69 <keita69sawada@gmai.com>
 License : MIT license  {{{
     Permission is hereby granted, free of charge, to any person obtaining
     a copy of this software and associated documentation files (the
@@ -39,7 +39,7 @@ CHANGELOG			|post-mattermost-changelog|
 ==============================================================================
 INTRODUCTION					*post-mattermost-introduction*
 
-*post-mattermost.vim* is a post selected text to mattermost plugin
+*post-mattermost.vim* is a plugin for posting selected text to mattermost.
 
 Latest version:
 https://github.com/keita69/post-mattermost.vim
@@ -47,33 +47,37 @@ https://github.com/keita69/post-mattermost.vim
 ==============================================================================
 USAGE						*post-mattermost-usage*
 
-
-
 ==============================================================================
 INTERFACE					*post-mattermost-interface*
 
 ------------------------------------------------------------------------------
 VARIABLES					*post-mattermost-variables*
 
-g:mattermost_endpoint				g:mattermost_endpoint
-	Default value: "http://192.168.56.10:8065/hooks/63mt7dzfmtdn7cegjs35mumxkw"
+g:post_mattermost_access_token			g:post_mattermost_access_token
+	Default value: "Please set access_token"
+	Account Settiting > Securiry > Personal Access Tokens
+	https://docs.mattermost.com/developer/personal-access-tokens.html
+	ex) let g:post_mattermost_access_token = "j9fdrowxq3fhzjm4kt1arswfzh"
+
+g:post_mattermost_endpoint			g:post_mattermost_endpoint
+	Default value: "Please set endpoint"
+	This endopoint is mattermost server url.
+	ex) let g:post_mattermost_endpoint = "http://192.168.56.101:8065"
+
+g:post_mattermost_channel_id			g:post_mattermost_channel_id
+	Default value: "Please set channel_id"
+	ex) let g:post_mattermost_channel_id = "kkxt3xsywtyzfjurtst6pmueeh"
+
+g:post_mattermost_curl_opt			g:post_mattermost_curl_opt
+	Default value: ""
+	This curl_opt is curl command options.
+	ex) let g:post_mattermost_curl_opt = "--noproxy 192.168.56.101" 
 
 ------------------------------------------------------------------------------
 COMMANDS					*post-mattermost-commands*
 
-:PostMattermost[!] {text}				*:PostMattermost*
-	PostMattermost {text} to g:mattermost_endpoint
-	Use the ! to post-mattermost g:mattermost_endpoint
-
-:AutoPostMattermostModeEnable[!]			*:AutoPostMattermostModeEnable*
-	Start auto post-mattermost current buffer sentence with <CR>.
-	Use the ! to post-mattermost g:mattermost_endpoint
-
-:AutoPostMattermostModeDisable[!]			*:AutoPostMattermostModeDisable*
-	Disable Auto post-mattermost mode.
-
-:AutoPostMattermostModeToggle[!]			*:AutoPostMattermostModeToggle*
-	Toggle auto post-mattermost mode.
+:'<,'> PostMattermost
+	This is a commnad for posting selected text('<,'>) to g:mattermost_endpoint
 
 ------------------------------------------------------------------------------
 KEY-MAPPINGS					*post-mattermost-key-mappings*
