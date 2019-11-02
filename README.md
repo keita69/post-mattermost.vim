@@ -29,7 +29,7 @@ let g:post_mattermost_channel_id = "kkxt3xsywtyzfjurtst6pmueeh"
 let g:post_mattermost_curl_opt = "--noproxy 192.168.56.101" 
 ```
 ## get personal access token
-	Account Settiting > Securiry > Personal Access Tokens
+![](https://github.com/keita69/post-mattermost.vim/blob/master/doc/personal-token-is-here.gif?raw=true)
 	https://docs.mattermost.com/developer/personal-access-tokens.html
 	ex) let g:post_mattermost_access_token = "j9fdrowxq3fhzjm4kt1arswfzh"
 
