@@ -19,13 +19,13 @@ Ex: dein.vim
 repo = 'keita69/post-mattermost.vim'
 ```
 
-# Usage
-This is a plugin for posting selected text to mattermost.
+# Setting init.vim(.vimrc)
 
-```vim
+## ~/.config/nvim/init.vim(.vimrc)
+```
 let g:post_mattermost_access_token = "j9fdrowxq3fhzjm4kt1arswfzh"
 let g:post_mattermost_endpoint = "http://192.168.56.101:8065"
-let g:post_mattermost_channel_id = "kkxt3xsywtyzfjurtst6pmueeh"
+let g:post_mattermost_channel_id_default = "kkxt3xsywtyzfjurtst6pmueeh"
 let g:post_mattermost_curl_opt = "--noproxy 192.168.56.101" 
 ```
 ## get personal access token
