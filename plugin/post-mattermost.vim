@@ -7,7 +7,7 @@ command! -range PostMattermost <line1>,<line2>call s:PostMattermost()
 function! s:PostMattermost() range
   let s:access_token = get(g:, "post_mattermost_access_token", "Please set access_token")
   let s:endpoint = get(g:, "post_mattermost_endpoint", "Please set endpoint")
-  let s:channel_id = s:GetChannelId()
+  let s:channel_id = get(g:, "post_mattermost_channel_id_default", "Please set channel_id_default")
   let s:curl_opt = get(g:, "post_mattermost_curl_opt", "")
 
   let s:message = s:GetVisualSelection(a:firstline, a:lastline)
@@ -29,11 +29,6 @@ function! s:PostMattermost() range
     echo 'OK : Post to mattermost !!'
   endif
 
-endfunction
-
-function! s:GetChannelId()
-  let s:channel_id_default= get(g:, "post_mattermost_channel_id", "Please set channel_id_default")
-  return s:channel_id_default
 endfunction
 
 function! s:GetVisualSelection(lnum1, lnum2)
